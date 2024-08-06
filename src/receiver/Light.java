@@ -1,16 +1,16 @@
-package device;
+package receiver;
 
-public class Light extends Device{
+public class Light extends Device {
 
     public Light(String location) {
         super(location);
     }
 
-    public void on(){
+    public void on() {
         System.out.println(getLocation() + " 조명이 켜졌습니다.");
     }
 
-    public void off(){
+    public void off() {
         System.out.println(getLocation() + " 조명이 꺼졌습니다.");
     }
 }

@@ -1,9 +1,13 @@
+package invoker;
+
 import command.Command;
 
 public class SimpleRemoteControl {
+
     Command slot;
 
-    public SimpleRemoteControl() {}
+    public SimpleRemoteControl() {
+    }
 
     public void setCommand(Command command) {
         slot = command;

@@ -1,6 +1,6 @@
 package command;
 
-import device.Stereo;
+import receiver.Stereo;
 
 public class StereoOnWithCDCommand implements Command {
 

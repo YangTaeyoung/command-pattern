@@ -1,4 +1,4 @@
-package device;
+package receiver;
 
 public abstract class Device {
 

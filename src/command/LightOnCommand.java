@@ -1,6 +1,6 @@
 package command;
 
-import device.Light;
+import receiver.Light;
 
 public class LightOnCommand implements Command {
 

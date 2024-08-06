@@ -1,3 +1,5 @@
+package invoker;
+
 import command.Command;
 import command.NoCommand;
 
@@ -31,7 +33,7 @@ public class RemoteControlWithUndo {
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
-        undoCommand = onCommands[slot]; // add
+        undoCommand = offCommands[slot]; // add
     }
 
     // add
@@ -47,6 +49,9 @@ public class RemoteControlWithUndo {
                 .append(onCommands[i].getClass().getName()).append("    ")
                 .append(offCommands[i].getClass().getName()).append("\n");
         }
+
+        stringBuilder.append("[undo]").append("    ").append(undoCommand.getClass().getName())
+            .append("\n"); // add
 
         return stringBuilder.toString();
     }

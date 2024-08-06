@@ -1,6 +1,6 @@
 package command;
 
-import device.GarageDoor;
+import receiver.GarageDoor;
 
 public class GarageDoorDownCommand implements Command {
 

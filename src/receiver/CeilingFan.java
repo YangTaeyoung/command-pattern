@@ -1,6 +1,7 @@
-package device;
+package receiver;
 
-public class CeilingFan extends Device{
+public class CeilingFan extends Device {
+
     private Speed speed;
 
     public CeilingFan(String location) {
@@ -32,8 +33,11 @@ public class CeilingFan extends Device{
         System.out.println(getLocation() + " 선풍기가 꺼졌습니다.");
     }
 
+    public Speed getSpeed() {
+        return speed;
+    }
 
-    private enum Speed {
+    public enum Speed {
         HIGH, MEDIUM, LOW, OFF
     }
 }

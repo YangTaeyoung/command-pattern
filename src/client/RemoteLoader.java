@@ -1,17 +1,20 @@
+package client;
+
+import command.CeilingFanHighCommand;
 import command.CeilingFanOffCommand;
-import command.CeilingFanOnCommand;
 import command.GarageDoorDownCommand;
 import command.GarageDoorUpCommand;
 import command.LightOffCommand;
 import command.LightOnCommand;
 import command.StereoOffCommand;
 import command.StereoOnWithCDCommand;
-import device.CeilingFan;
-import device.GarageDoor;
-import device.Light;
-import device.Stereo;
+import invoker.RemoteControl;
+import receiver.CeilingFan;
+import receiver.GarageDoor;
+import receiver.Light;
+import receiver.Stereo;
 
-public class Main {
+public class RemoteLoader {
 
     public static void main(String[] args) {
         RemoteControl remoteControl = new RemoteControl();
@@ -27,7 +30,7 @@ public class Main {
         LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
         LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
 
-        CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+        CeilingFanHighCommand ceilingFanOn = new CeilingFanHighCommand(ceilingFan);
         CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
 
         GarageDoorUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
@@ -40,6 +43,7 @@ public class Main {
         remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
         remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
         remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
+        remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
 
         System.out.println(remoteControl);
 
@@ -51,5 +55,7 @@ public class Main {
         remoteControl.offButtonWasPressed(2);
         remoteControl.onButtonWasPushed(3);
         remoteControl.offButtonWasPressed(3);
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPressed(4);
     }
 }
